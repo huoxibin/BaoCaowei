@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="../css/iconfont2.css">
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+	<title>commen_footer</title>
+<style>
+body,footer,li,ul{margin: 0;padding: 0;}
+a{text-decoration: none;}
+#common_fot{
+	width: 100%;
+	border-top: 2px solid #efefef;
+	height:50px;
+	position: fixed;
+	bottom: 0px;
+	z-index: 999;
+	background: white;
+}
+#common_fot .foot{
+	display: flex;
+	justify-content: space-between;	
+}
+#common_fot .foot li{
+	margin-top: 6px;
+	width: 25%;
+	text-align: center;
+	list-style: none;
+}
+.foot li i{
+	font-size: 20px;
+	color:#606771 ;
+}
+.foot li span{
+	color:rgba(60,67,71,.5);
+	font-size: 12px;
+	color:#606771 ;
+	margin:0;
+	display: block;
+}
+.foot li .on{
+	display: none;
+}
+.foot li .on-color{
+	color: #FFDA44;
+}
+.foot li .cart-num{
+	display: block;
+	width:15px;
+	height:15px;
+	background:red;
+	position: relative;
+	top:-40px;
+	left:13vw;
+	border-radius: 50%;
+	color: white;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 15px;
+}
+
+	</style>
+</head>
+<body>
+	<footer id="common_fot">
+			<ul class='foot'>
+				<li class="foot-a"><a href='../index.html'>
+					<i class="iconfont icon-home"></i>
+                	<i class="iconfont icon-homefill on on-color"></i>
+               		<span>首页</span></a>
+				</li>
+				<li class="foot-b"><a href='Sort.html'>
+					<i class="iconfont icon-circle"></i>
+                	<i class="iconfont icon-circlefill on on-color"></i>
+                	<span>分类</span></a>
+				</li>
+				<li class="foot-c"><a href='cart.html'>
+					<i class="iconfont icon-cart"></i>
+                	<i class="iconfont icon-cartfill on on-color"></i>
+                	<span>购物车</span>
+                	<em class="cart-num"></em></a>
+				</li>
+				<li class="foot-d"><a href='wode.html'>
+					<i class="iconfont icon-my"></i>
+                	<i class="iconfont icon-myfill on on-color"></i>
+                	<span>我的</span></a>
+				</li>
+			</ul>
+		</footer>
+</body>
+<script type="text/javascript">
+	//购物车数据同步
+		var cart_item=localStorage.getItem("cartdata");
+		if(cart_item&&cart_item.length>2){
+			$(".cart-num").text(JSON.parse(cart_item).length)
+		}else{
+			$(".cart-num").text(0);
+		}
+</script>
+</html>

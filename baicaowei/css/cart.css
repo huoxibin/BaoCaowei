@@ -1,0 +1,270 @@
+body,p,ul{margin: 0;padding: 0;}
+body{font-size: 16px;color:rgba(60,67,71,1);background: #F5F5F5;font-family: "微软雅黑";}
+li{list-style: none;}
+a{text-decoration: none;}
+em,i{font-style: normal;}
+
+/*购物车头部*/
+.header{
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.1rem;
+	line-height: 50px;
+	position: fixed;
+	top: 0;
+	background: #fff;
+}
+.header:after{
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+.header span{
+	float: right;
+	font-size: 14px;
+	padding-right: 10px;
+}
+/*购物车内容*/
+.cart-content{
+	padding: 50px 0 150px 0;
+}
+/*购物车警告提示*/
+.cart-warn{
+	height: 40px;
+	font-size: 0.9rem;
+	margin-bottom: 10px;
+	background: #fff;
+	display: flex;
+	align-items: center;
+}
+/*不满包邮提示*/
+.cart-warn a{
+	width: 100%;
+	color: rgba(60,67,71,1);
+}
+.cart-warn a span{
+	margin: 0 10px 0;
+	padding: 2px 5px;
+	border: 1px solid #ff4348;
+	color:#ff4348
+}
+.cart-warn a i{
+	float: right;
+	font-weight: bold;
+	padding-right: 10px;
+}
+/*满包邮提示*/
+.cart-warn div{
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+/*购物车空的呀*/
+.cart-list>div{
+	text-align: center;
+	display: none;
+}
+.cart-list>div img{
+	display: block;
+	width: 100%;
+}
+/*商品列表*/
+.cart-list li{
+	padding: 10px 2% 10px 2%;
+	margin-bottom: 10px;
+	height: 20vw;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.cart-list .check-box{
+	width: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.check-box .check-icon{
+	height: 18px;
+	width: 18px;
+	background: url(../img/check_s.png);
+	background-size: 100%;
+}
+.cart-list .good-pic{
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cart-list .good-pic a{
+	width: 20vw;
+	height: 20vw;
+	background: red;
+	border: 1px solid #ccc;
+}
+.cart-list .good-pic img{
+	border: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.cart-list .good-detail{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.good-detail p{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	padding-top: 5px;
+}
+.good-detail .good-numbox{
+	display: flex;
+	justify-content: space-between;
+}
+.good-numbox div{
+	display: flex;
+	justify-content: space-between;
+	padding-right: 2vw;
+}
+.good-numbox button{
+	width: 6vw;
+	background: #fff;
+	font-size: 1rem;
+	padding: 0;
+	border: 1px solid #333;
+	outline: 0;
+}
+.good-numbox input{
+	width: 8vw;
+	text-align: center;
+	font-size: 1rem;
+	border: 0;
+	outline: 0;
+}
+.good-numbox span{
+	color: #f33;
+	font-weight: bold;
+}
+/*警告提示框*/
+.warn-tip{
+	position: fixed;
+	z-index: 99;
+	top: 50%;
+	left: 30%;
+	width: 40%;
+	height: 40px;
+	background: #333;
+	border-radius: 10px;
+	color: #eee;
+	text-align: center;
+	opacity: 0;
+}
+/*隐藏的删除确认框*/
+.del-sure{
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	display: none;
+}
+.del-sure div{
+	position: absolute;
+	top:50%;
+	left:15%;
+	height: 100px;
+	width: 70%;
+	border-radius: 10px;
+	background: #fff;
+}
+.del-sure div span{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+}
+.del-sure .del-tit{
+	border-bottom: 0.5px solid #aaa;
+}
+.del-sure .del-make{
+	display: flex;
+	justify-content: space-between;
+}
+.del-sure .del-make em{
+	width: 50%;
+}
+.del-sure .del-make em:first-child{
+	border-right: 0.5px solid #aaa;
+}
+/*购物车底部结算*/
+.cart-footer{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	background: #fff;
+	border-top: 1px solid #d9d9d9;
+	left: 0;bottom: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+.cart-footer .check-all{
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.check-all i{
+	height: 18px;
+	width: 18px;
+	background: url(../img/check_s.png);
+	background-size: 100%;
+	margin-right: 5px;
+}
+.cart-footer .allmony{
+	width: 45%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.cart-footer .allmony i{
+	color: rgba(255,67,72,1);
+}
+.cart-footer .topay{
+	width: 25%;
+	margin-right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.topay a{
+	width: 100%;
+	height: 40px;
+	border-radius: 20px;
+	background: #ffda44;
+	line-height: 40px;
+	text-align: center;
+	color: #333;
+}
+/*页面底部*/
+
+/*警告框动画*/
+@keyframes dh_warn{
+	0%{opacity: 0;}
+	35%{opacity: 1;}
+	65%{opacity: 1;}
+	100%{opacity: 0;}
+}
+.warn_go{
+	animation: dh_warn 4s linear 0s 1 forwards;
+}

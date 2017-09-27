@@ -1,0 +1,65 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-family: "微软雅黑";
+}
+ul li{
+	list-style: none;
+}
+header{
+	height:50px;
+	border-bottom: 1px solid #999;
+	display: flex!important;
+	justify-content: space-around;
+	line-height: 50px;	
+}
+header .tit{
+	font-style: normal;
+	font-size: 20px;
+	font-weight: 600;
+}
+header .iconfont{
+	font-size: 26px;
+}
+.rank ul{
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px solid #999;
+}
+.rank ul li{
+	font-size: 18px;
+	padding:5px 20px;
+}
+.main{
+	background: #F5F5F5;
+	padding-bottom: 50px;
+}
+.main ul{
+	display: flex;
+	flex-wrap:wrap ;
+	justify-content: space-around;
+}
+.main ul li{
+	width:48%;
+	margin-bottom:2vw;
+	background: white;
+}
+.main ul li img{
+	width:100%;
+	display: block;
+	margin:0 auto;
+}
+.main ul li .descripte{
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+}
+.main ul li .price{
+	color: red;
+	padding:10px 5px;
+}

@@ -1,0 +1,98 @@
+body{
+	background:#F5F5F5 ;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+header{
+	margin: 0;
+	padding: 0;
+}
+header{
+	width: 100vw;
+	height: 50px;
+	text-align: center;
+	line-height:50px;
+	background: #fff;
+	z-index: 99;
+	color: rgba(60,67,71,1);
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+}
+header i{
+	position: absolute;
+}
+.hidden{
+	display: none;
+}
+
+.collect,ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.collect ul{
+	width: 100vw;
+}
+.collect ul li{
+	width: 92vw;
+	height: 25vw;
+	padding: 10px 4vw;
+	margin-top: 10px;
+	background: #fff;
+	position: relative;
+}
+.collect ul li .aImg{
+	width: 25%;
+	float: left;
+	display: inline-block;
+	border: 1px solid #e5e5e5;
+}
+.collect ul li .aImg img{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+.collect ul li .textDiv{
+	width: 70%;
+	float: left;
+	padding: 0 0 0 5px;
+	color:#3c4347;
+	display: inline-block;
+	font-size: 1vw;
+}
+.collect .textDiv #f1{
+	font-size: 3vw;
+}
+.collect .textDiv #f2{
+	color: #9ea1a3;
+    font-size: 3vw;
+}
+.collect .textDiv #f3{
+	bottom: 8vw;
+    position: absolute;
+    left: 30vw;
+    color: red;
+    font-size: 3vw;
+}
+.collect ul li .buy-btn1{
+	position: absolute;
+    bottom: 5vw;
+    right: 10%;
+    height: 7vw;
+    padding: 0 20px;
+    line-height: 7vw;
+    background: #ffda44;
+    color: #3c4347;
+    border-radius: 30px;
+}
+
+
+
+
+
+
+
+

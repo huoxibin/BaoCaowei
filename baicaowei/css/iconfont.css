@@ -1,0 +1,60 @@
+
+@font-face {font-family: "iconfont";
+  src: url('http://static.vipbcw.com/css-wap/font/iconfont.eot?t=1469087683'); /* IE9*/
+  src: url('http://static.vipbcw.com/css-wap/font/iconfont.eot?t=1469087683#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://static.vipbcw.com/css-wap/font/iconfont.woff?t=1469087683') format('woff'), /* chrome, firefox */
+  url('http://static.vipbcw.com/css-wap/font/iconfont.ttf?t=1469087683') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('http://static.vipbcw.com/css-wap/font/iconfont.svg?t=1469087683#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:3rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-huo:before { content: "\e60f"; }
+.icon-daojishi:before { content: "\e600"; }
+.icon-jia:before { content: "\e617"; }
+.icon-jian:before { content: "\e618"; }
+.icon-iconsearch1:before { content: "\e601"; }
+.icon-iconsearch2:before { content: "\e602"; }
+.icon-iconhomecopy:before { content: "\e603"; }
+.icon-iconuser:before { content: "\e604"; }
+.icon-iconuserpressed:before { content: "\e605"; }
+.icon-iconhomepressed:before { content: "\e606"; }
+.icon-iconcartpressed:before { content: "\e607"; }
+.icon-iconcart:before { content: "\e608"; }
+.icon-iconclassifypressed:before { content: "\e609"; }
+.icon-iconclassify:before { content: "\e60a"; }
+.icon-icontrash:before { content: "\e60e"; }
+.icon-icongo:before { content: "\e60b"; }
+.icon-iconup:before { content: "\e60c"; }
+.icon-iconback:before { content: "\e60d"; }
+.icon-iconservicer:before { content: "\e610"; }
+.icon-iconcollect:before { content: "\e611"; }
+.icon-iconcollected:before { content: "\e613"; }
+.icon-iconshare:before { content: "\e612"; }
+.icon-icontool:before { content: "\e614"; }
+.icon-icemojisuccess:before { content: "\e615"; }
+.icon-icemojihappysuccess:before { content: "\e616"; }
+.icon-icon:before { content: "\e619"; }
+.icon-iceditdress:before { content: "\e61a"; }
+.icon-icx:before { content: "\e61b"; }
+.icon-icgoodsdetails:before { content: "\e61c"; }
+.icon-alipayc:before { content: "\e61d"; }
+.icon-wechatc:before { content: "\e61e"; }
+.icon-money:before { content: "\e61f"; }
+.icon-iccouponsubmitorder:before { content: "\e620"; }
+.icon-icmethoddetails:before { content: "\e621"; }
+.icon-icemoji1:before { content: "\e622"; }
+.icon-cart:before { content: "\e6af"; }
+.icon-cartfill:before { content: "\e6b9"; }
+.icon-home:before { content: "\e6b8"; }
+.icon-homefill:before { content: "\e6bb"; }
+.icon-my:before { content: "\e78b"; }
+.icon-myfill:before { content: "\e78c"; }
+.icon-circle:before { content: "\e7b1"; }
+.icon-circlefill:before { content: "\e7b0"; }

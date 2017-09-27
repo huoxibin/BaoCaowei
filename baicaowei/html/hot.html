@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<meta charset="UTF-8">
+		<title>TOP榜</title>
+		<link rel="stylesheet" type="text/css" href="../css/hot.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="z-banner">
+				<div class="banner-img">
+					<img src="http://img2.vipbcw.com/projectWap/img_top10/banner.png"/>
+				</div>
+				<div class="banner-count">
+					<p><span class="l">◆</span>一周零食TOP榜 新鲜出炉<span class="l">◆</span></p>
+					<span>小伙伴爱吃的零食都在这儿！</span>
+				</div>
+			</div>
+			<!--返回按钮-->
+			<div class="z-backBtn" onclick="history.go(-1)">
+				<!--history.go(-1)后退一页，并且刷新页面
+					还有以下方法
+					history.back();   后退
+					history.forward(); 前进
+					***history.go(-1)和history.back()的区别***
+					history.go(-1)表示后退与刷新。如数据有改变也随之改变
+					history.back()只是单纯的返回到上一页。
+				-->
+				<i class="iconfont icon-iconback"></i>
+			</div>
+		</header>
+		<section>
+			<div class="z-product">
+				<ul class="product-list">
+					<li class="hidden">
+						<!--商品-->
+						<a>
+							<div class="pro-img">
+								<img src="" alt="玩命卖萌中..."/>
+							</div>
+							<p class="pro-name">玩命卖萌中...</p>
+							<p class="pro-txt">玩命卖萌中...</p>
+							<p class="pro-price"><span>玩命卖萌中...</span></p>
+						</a>
+						<!--add购物车-->
+						<p class="z-addGWC">加入购物车</p>
+						<!--top图标-->
+						<p class="z-top">
+							<img src="http://img2.vipbcw.com/projectWap/img_top10/top1.png"/>
+						</p>
+					</li>
+				</ul>
+			</div>
+			<!--购物车数量-->
+			<div class="z-cart">
+	            <a href="../html/cart.html">
+	                <p class="cart-num">0</p>
+	                <img src="http://img2.vipbcw.com/projectWap/icon_cart_s.svg">
+	            </a>
+	        </div>
+		</section>
+	</body>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/touch.js"></script>
+	<script src="../js/hot.js"></script>
+	<script src="../layer/layer.js"></script>
+</html>

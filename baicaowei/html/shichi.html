@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>免费试吃</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/shichi.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		
+		
+	</head>
+	<body>
+		<div class="container">
+				<!--返回按钮-->
+			<div class="backBtn" onclick="history.go(-1)">
+					<!--history.go(-1)后退一页，并且刷新页面
+						还有以下方法
+						history.back();   后退
+						history.forward(); 前进
+						***history.go(-1)和history.back()的区别***
+						history.go(-1)表示后退与刷新。如数据有改变也随之改变
+						history.back()只是单纯的返回到上一页。
+					-->
+					<i class="iconfont icon-iconback"></i>
+			</div>
+            <div class="active-top">
+            
+                <img class="active-top-img" src="../img/c_img1.png">
+                <div class="active-top-content">
+                    <h1><i class="icon-left"></i>活动规则<i class="icon-right"></i></h1>
+                    <p>小马虎们，看准时间奥！<b>试吃申请时间：</b></p>
+                    <p class="active-top-content-time"><b>7月27日 0:00——8月2日 24:00</b></p>
+                    <h2><em></em>关注微信，快速报名</h2>
+                    <p>1、关注公众号"百草味APP"（搜索微信号:vipbcw)；</p>
+                    <p>2、回复关键词"我是零食家"，再报上手机号即可报名成功;</p>
+                    <h2><em></em>24小时被审核完毕，试吃出库</h2>
+                    <p>24小时内联系每一位回复的"零食家"，如果你是幸运的前30位，我们会在第一时间送出1份健康的新鲜荞麦饼</p>
+                    <p class="active-top-content-ts">*温馨提示:试吃商品一经发出概不退换哦</p>
+                </div>
+            </div>
+            <div class="active-middle">
+                <img src="../img/c_img3.png" class="active-middle-img">
+                <div class="active-middle-content">
+                    <h1><i class="icon-left"></i>荞麦饼的故事<i class="icon-right"></i></h1>
+                    <p class="text1">盛夏的燥热，很容易让人失去对食物的兴致</p>
+                    <p class="text1">这时候我们常常会想 </p>
+                    <p class="text1">要是站在一大片荞麦田里</p>
+                    <p class="text1">晚风吹来一阵麦香       该多好</p>
+                    <img src="../img/c_img4.png">
+                    <h2>优质原产地</h2>
+                    <p class="text2">优质原产地 百草味精选优质荞麦产地原料，让好闻的麦香层层传递，撕开包装的那一刻，新鲜的谷物味道跳跃出来，即便是沉闷的夏季，也能让身心得到暂时的舒缓</p>
+                    <img src="../img/c_img5.png">
+                    <h2>工艺升级</h2>
+                    <p class="text2">工艺升级 粗粮食物在很多人眼里意味着健康，也意味着口感粗糙。为了打破这个魔咒，我们升级了工艺，细细打磨，让每一次入口都带来愉悦的感受</p>
+                    <img src="../img/c_img6.png">
+                    <h2>小包易分享</h2>
+                    <p class="text2">小包易分享 作为办公室常备的解饿零食，独立小包装的设计方便储存，也能很好地控制食量。同时又可以随时随地快乐分享，没食欲？一起解决！</p>
+                    <h1><i class="icon-left"></i>商品详情<i class="icon-right"></i></h1>
+                    <ul>
+                        <li>
+                            <span class="goods-text">产品名称:</span>
+                            <span class="n-text">荞麦饼</span>
+                        </li>
+                        <li>
+                            <span class="goods-text">产品规格:</span>
+                            <span class="n-text">125g/盒</span>
+                        </li>
+                        <li>
+                            <span class="goods-text">保质期:</span>
+                            <span class="n-text">180天</span>
+                        </li>
+                        <li>
+                            <span class="goods-text">贮存条件:</span>
+                            <span class="n-text">阴凉通风，干燥处保存</span>
+                        </li>
+                        <li>
+                            <span class="goods-text">生产日期:</span>
+                            <span class="n-text">见盒身</span>
+                        </li>
+                        <li>
+                            <span class="goods-text">执行标准号:</span>
+                            <span class="n-text">GB/T 20977</span>
+                        </li>
+                        <li>
+                            <span class="goods-text">生产许可证号:</span>
+                            <span class="n-text">QS3307 20411479</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="active-bottom">
+                <img src="../img/c_img7.png">
+            </div>
+        </div>
+       
+	</body>
+	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script type="text/javascript">
+		
+    addBackHomeBtn();
+    //返回首页按钮（活动页面，商品详情页）
+    function addBackHomeBtntm(){
+        var $btn = $('<div class="backHome"><a href="../index.html">首页逛逛</a></div>');
+        var _userAgent = navigator.userAgent;
+        var _referer = document.referrer;
+        if(_userAgent.indexOf("bcwmall") < 0 && _referer.indexOf("vipbcw.com") < 0){
+            $("body").append($btn);
+        }
+    }
+
+	</script>-->
+	
+	
+</html>

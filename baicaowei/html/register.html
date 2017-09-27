@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"  />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../css/base.css"/>-->
+		<style type="text/css">
+			body{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="z-backBtn" onclick="history.go(-1)">
+					<!--history.go(-1)后退一页，并且刷新页面
+						还有以下方法
+						history.back();   后退
+						history.forward(); 前进
+						***history.go(-1)和history.back()的区别***
+						history.go(-1)表示后退与刷新。如数据有改变也随之改变
+						history.back()只是单纯的返回到上一页。
+					-->
+					<i class="iconfont icon-iconback"></i>
+		</div>
+		<section id="qzu-register"> 
+			<div>
+				<i><img src="../img/ic_iphone.svg"/></i>
+				<input type="text" placeholder="手机号" autofocus="autofocus" id="qzc-username"/>
+			</div>
+			<div>
+				<i><img src="../img/ic_verificationcode.svg"/></i>
+				<input type="text" placeholder="验证码"/>
+				<span>获取验证码</span>
+			</div>
+			<div>
+				<i><img src="../img/ic_locker.svg"/></i>
+				<input type="password" placeholder="字母开头6-16位数字、字母、下划线"" id="qzc-password"/>
+			</div>
+			<div>
+				<i><img src="../img/ic_locker.svg"/></i>
+				<input type="password" placeholder="确认密码" id="qzc-passwordagain"/>
+			</div>
+			<div><button id="qzc-btn">登 录</button>
+			</div>
+			<div class="qzc-remaind"><p></p></div>
+		</section>
+	</body>
+<script type="text/javascript" src="../js/jquery.js"></script><br/>
+<script type="text/javascript" src="../layer/layer.js"></script>
+<script src="../js/touch.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$("#qzu-register input").not("#qzc-btn").focus(function(){
+		$(".qzc-remaind p").css('background',"none")
+	})
+
+	//验证正则表达式注册
+	
+	var re=/^[1][358][0-9]{9}$/
+	var repass=/^[a-z|A-Z]\w{5,15}$/ //6到16位的字母数字下划线
+	touch.on("#qzc-btn","tap",function(){//click有300毫秒的延迟
+		var qzc_username=$("#qzc-username").val();
+		var qzc_password=$("#qzc-password").val();
+		var qzc_passwordagain=$("#qzc-passwordagain").val();
+		if(!re.test(qzc_username)){
+/*			$(".qzc-remaind p").html("手机格式不正确！").css({
+					background: "#666",
+					color: "#fff",
+					padding: "15px 30px",
+					"font-family": "微软雅黑",
+					"font-size": "2vw",
+					"border-radius": "8px 8px",
+					opacity: 0.9
+			})*/
+			layer.msg("手机格式不正确！",{offset: "70%"})
+		}else if(!repass.test(qzc_password)){
+			/*$(".qzc-remaind p").html("密码格式不正确！").css({
+					background: "#666",
+					color: "#fff",
+					padding: "15px 30px",
+					"font-family": "微软雅黑",
+					"font-size": "2vw",
+					"border-radius": "8px 8px",
+					opacity: 0.9
+			})*/
+			layer.msg("密码格式不正确！",{offset: "70%"})
+		}else if(qzc_password!=qzc_passwordagain){
+			/*$(".qzc-remaind p").html("两次密码不一致！").css({
+					background: "#666",
+					color: "#fff",
+					padding: "15px 30px",
+					"font-family": "微软雅黑",
+					"font-size": "2vw",
+					"border-radius": "8px 8px",
+					opacity: 0.9
+			})*/
+			layer.msg("两次密码不一致！",{offset: "70%"})
+		}else{
+			$.ajax({  				
+				url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+                data:{
+                    status:"register",
+                    userID:qzc_username,
+                    password:qzc_password
+                },
+                success:function(data){//成功了返回数值
+                    if(data==0){
+	                   /* $(".qzc-remaind p").html("用户名已经存在！").css({
+							background: "#666",
+							color: "#fff",
+							padding: "15px 30px",
+							"font-family": "微软雅黑",
+							"font-size": "2vw",
+							"border-radius": "8px 8px",
+							opacity: 0.9
+						})*/
+					layer.msg("用户名已经存在！",{offset: "70%"})	
+                    }else if(data==1){
+	                    /*$(".qzc-remaind p").html("恭喜您,注册成功!").css({
+							background: "#666",
+							color: "#fff",
+							padding: "15px 30px",
+							"font-family": "微软雅黑",
+							"font-size": "2vw",
+							"border-radius": "8px 8px",
+							opacity: 0.9
+						})*/
+						layer.msg("恭喜您,注册成功！",{offset: "70%"})	
+						localStorage.username=qzc_username;
+                    	localStorage.password1=qzc_password;
+						setTimeout(function(){
+							window.location.href="login.html"
+						},2000)
+                	}else if(data==2){
+	                    $(".qzc-remaind p").html("不好意思出错啦~~").css({
+							background: "#666",
+							color: "#fff",
+							padding: "15px 30px",
+							"font-family": "微软雅黑",
+							"font-size": "2vw",
+							"border-radius": "8px 8px",
+							opacity: 0.9
+						})
+                    }
+                },
+                error:function(data){
+                    console.log(data)
+                }
+            })
+		}
+		<!--$("#qzc-username").val("");-->
+		$("#qzc-password").val("");
+		$("#qzc-passwordagain").val('');
+	})
+</script>
+</html>

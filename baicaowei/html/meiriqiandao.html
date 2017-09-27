@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>每日签到</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../css/mrqd.css" />
+	</head>
+	<body>
+		<div class="signIn-box">
+			<!--返回按钮-->
+			<div class="backBtn" onclick="history.go(-1)">
+					<!--history.go(-1)后退一页，并且刷新页面
+						还有以下方法
+						history.back();   后退
+						history.forward(); 前进
+						***history.go(-1)和history.back()的区别***
+						history.go(-1)表示后退与刷新。如数据有改变也随之改变
+						history.back()只是单纯的返回到上一页。
+					-->
+					<i class="iconfont icon-iconback"></i>
+			</div>
+			<div class="top">
+               	<img src="../img/s_topBg.jpg"/>
+                       <!--待签到-->
+                <div class="ab-box on">
+                    <p class="btn J_signInBtn">立即签到</p>
+                    <p class="p"><img src="../img/s_zhi.png"/>点我，今日领<i>1元</i> </p>
+                </div>
+            </div>
+            
+            <div class="sign-tit on">
+                    <p>累计奖励：0元</p>
+                    <p>连续签到7天即可获得7元优惠券</p>
+            </div>
+            <div class="calendar-box">
+                <p class="data-p" id="J_nowDate"><img src="../img/s_dataIcon.png"/><span></span> </p>
+                <div class="time-box">
+                    <div class="week-box clearfix">
+                        <ul>
+                            <li>日</li>
+                            <li>一</li>
+                            <li>二</li>
+                            <li>三</li>
+                            <li>四</li>
+                            <li>五</li>
+                            <li>六</li>
+                        </ul>
+                    </div>
+                    <div class="data-box clearfix">
+                        <ul id="J_dateBox"></ul>
+                       		<!-- 数组-->
+                        
+                    </div>
+                </div>
+            </div>
+             <div class="rule-box">
+                    <p class="p1">签到规则说明：</p>
+                    <p>1. 每日签到获得1元钱奖励，连续签到7天即得7元优惠券。</p>
+                    <p>2. 7元优惠券会自动发放到账户，满15元可用。</p>
+                    <p>3. 连续签到不足7天时，将签到奖励清零重新计算。</p>
+                    <p>4. 活动最终解释权归百草味所有。</p>
+                </div>
+
+                <!--签到成功弹窗 显示添加on类名-->
+                <div class="popup" id="success_show">
+                    <div class="box">
+                        <img src="../img/s_success.jpg"/>
+                        <p>恭喜，已获得奖励: 1元</p>
+                        <p>连续签到7天，即可获得7元优惠券哦</p>
+                        <p><a href="#" class="J_closePop">确定</a> </p>
+                    </div>
+                </div>
+                <!--第七天领取成功弹窗-->
+                <div class="popup" id="get_coupon_show">
+                    <div class="box">
+                        <img src="../img/s_success2.jpg"/>
+                        <p>连续签到7天了!</p>
+                        <p>恭喜，7元优惠券已到您账户</p>
+                        <p><a href="#" class="J_closePop">确定</a> </p>
+                    </div>
+                </div>
+                <!--第七天优惠券弹窗-->
+                <div class="popup" id="J_coupPop">
+                    <div class="box" style="padding-top:20px;">
+                        <p>再连续签到6天，</p>
+                        <p>7元优惠券即可到手哦！</p>
+                        <img style="width:70%;margin:10px 0;" src="../img/s_coup.png"/>
+                        <p><a href="javascript:;" class="J_closePop">确定</a> </p>
+                    </div>
+                </div>
+            </div>
+        <a class="appHref" target="webIframe" href='record/signIn' id="J_recordSignIn"><span></span></a>
+        <iframe name="webIframe" width="0" height="0"></iframe>    
+	</body>
+	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		 var calendar = {
+	        init: function() {
+	            calendar.show();
+	        },
+	        show: function() {
+	            var signlog =[{"day":1,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":2,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":3,"signed":1,"coupon":0,"coupon_get":0},
+	            {"day":4,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":5,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":6,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":7,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":8,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":9,"signed":0,"coupon":1,"coupon_get":0},
+	            {"day":10,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":11,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":12,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":13,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":14,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":15,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":16,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":17,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":18,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":19,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":20,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":21,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":22,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":23,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":24,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":25,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":26,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":27,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":28,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":29,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":30,"signed":0,"coupon":0,"coupon_get":0},
+	            {"day":31,"signed":0,"coupon":0,"coupon_get":0}];
+	            var today ={"date":"03","signed":1};
+	            var now = new Date();
+	            var _year = now.getFullYear();
+	            var month = now.getMonth();
+	            var _month = month + 1;
+	            var _date = now.getDate();
+	            var firstDay = calendar.get_first_date(_year, month).getDay();//获取本月第一天是周几
+	            var lastDay = calendar.get_last_date(_year, month).getDate();//获取本月的天数
+	            $("#J_nowDate span").html(_year + "-" + _month + "-" + _date);
+	            for (var e = 0; e < firstDay; e++) {
+	                var _emptyLi = $('<li class="empty"></li>');
+	                $("#J_dateBox").append(_emptyLi);
+	            }
+	            $.each(signlog, function(key, value) {
+	                var _li = $('<li><span>' + value.day + '</span></li>');
+	                if (value.day <= today.date) {
+	                    if (value.signed == 1) {
+	                        // 前几天已签到
+	                        $(_li).addClass("state3");
+	                    } else {
+	                        //前几天未签到
+	                        if (value.day == today.date) {
+	                            if (today.signed == 1) {
+	                                //当天已签到
+	                                $(_li).addClass("state3");
+	                            } else {
+	                                //当天待签到
+	                                $(_li).addClass("state2");
+	                            }
+	                        } else {
+	                            $(_li).addClass("state4");
+	                            $('.state3').addClass('state5');
+	                        }
+	                    }
+	                    if (value.coupon == 1) {
+	                        //第七天的优惠券（灰色）
+	                        $(_li).addClass("state6");
+	                    }
+	                    if (value.coupon_get == 1) {
+	                        //第七天的优惠券（红色）
+	                        $(_li).addClass("state7");
+	                    }
+	
+	                } else {
+	                    if (value.coupon == 1) {
+	                        //第七天的优惠券（灰色）
+	                        $(_li).addClass("state6");
+	                    }
+	                }
+	                $("#J_dateBox").append(_li);
+	            });
+	        },
+	        get_first_date: function(year, month) {
+	            return new Date(year, month, 1);
+	        },
+	        get_last_date: function(year, month) {
+	            return new Date(year, month + 1, 0);
+	        }
+	    };
+	    calendar.init();
+	
+	    $(".J_closePop").click(function() {
+	        $(this).parents(".popup").removeClass("on");
+	    });
+	
+	    $("#J_dateBox").find("li.state6").click(function() {
+	        $("#J_coupPop").addClass("on");
+	    });
+	    $(function() {
+	        $(".J_signInBtn").click(function() {
+	            $("#J_recordSignIn").find("span").trigger("click");
+	            var act = "sign";
+	            $.ajax({
+	                type: "POST",
+	                url: "http://m.vipbcw.com/frontend/sign/doSign?r=" + Math.random(),
+	                data: {"act": act},
+	                dataType: "json",
+	                success: function(data) {
+	                    if (data.flag == 1) {
+	                        //签到失败
+	                        popHandle(data.error);
+	                    } else if (data.flag == 2) {
+	                        //签到成功
+	                        $("#success_show").addClass("on");
+	                        var header = '<p class="btn">今日已签</p>';
+	                        header += '<p class="p">今日已领<i>1</i>元，再接再厉哦！</p>';
+	                        $(".ab-box").html(header);
+	                        var signtitle = '<p>累计奖励' + data.money + '元</p>';
+	                        signtitle += '<p>再连续签到' + data.day + '天即可获得7元优惠券</p>';
+	                        $(".sign-tit").html(signtitle);
+	                        $(".state2").addClass('state3').removeClass("state2");
+	                    } else if (data.flag == 3) {
+	                        //领券成功
+	                        var header = '<p class="btn">今日已签</p>';
+	                        header += '<p class="p">今日已领<i>1</i>元，再接再厉哦！</p>';
+	                        $(".ab-box").html(header);
+	                        $("#get_coupon_show").addClass("on");
+	                        var signtitle = '<p>累计奖励：7元</p>';
+	                        signtitle += '<p>偷偷给您账户放了张7元优惠券哦！ </p>';
+	                        $(".sign-tit").html(signtitle);
+	                        $(".state6").addClass('state7').removeClass("state6");
+	                        $("#J_sevenDay").hide();
+	                    } else {
+	                        //已签过
+	                        popHandle(data.error);
+	                    }
+	                }
+	            });
+	        });
+	    });
+	</script>
+
+</html>

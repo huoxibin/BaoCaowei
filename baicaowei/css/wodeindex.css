@@ -1,0 +1,273 @@
+body{
+	background: #F5F5F5;
+	color: #666;
+	font-size: 1.2ew;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+}
+*[class^=col]{
+	padding: 0;
+}
+#fff2{
+	margin:0;
+	padding:0;
+	width:100vw;
+	background:url(../img/user_bg.png) repeat;
+	background-size:contain ;
+	position: relative;
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content: center; 
+	height: 215px;
+}
+a{
+	color: #666;
+	text-decoration: none;
+}
+a:active{
+	color: #666;
+	text-decoration: none;
+}
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+ul,li{
+	list-style: none;
+}
+.header1{
+	margin:0;
+	padding:0;
+	width:100vw;
+	background:url(../img/user_bg.png) repeat;
+	background-size:contain ;
+	position: relative;
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content: center; 
+	height: 215px;
+}
+.header1 i{
+	position: absolute;
+	display: block;
+	width: 35px;
+	height: 35px;
+	left: 6vw;
+	top: 4vh;
+	font-size: 25px;
+}
+.imgs{
+	width: 100%;
+	height: 146px;
+	position: relative;
+	display: flex;
+	flex-flow:row nowrap;
+	justify-content: center; 
+}
+.imgs .ren{
+	margin-top: 50px;
+	width: 150px;
+	height: 116px;
+	text-align: center;
+	/*position: relative;*/
+}
+.imgs .ren img{
+	align-self: center;
+	width: 116px;
+	height: 116px;
+	margin-bottom: 10px;
+}
+.imgs .ren p{
+	width: 150px;
+}
+.imgs .ren p i{
+	
+	width: 100%;
+    height: 7px;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top:165px;
+}
+.imgs .ren p i a{
+	color: #333;
+}
+.imgs .ren p span:after{
+	content:">";
+	display:inline;
+	margin-left: 2px;
+}
+
+.banner .dai{
+	margin-top: 10px;
+	background: #fff;
+	width: 100vw;
+	height: 70px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.banner .dai li{
+	padding-top: 10px;
+	position: relative;
+	display: flex;
+	flex-flow:column nowrap;
+	justify-content: center;
+}
+.banner .dai li i{
+	align-self: center;
+}
+.banner .dai li i img{
+	width: 25px;
+	height: 25px;
+	background-size:contain;
+}
+.banner .dai li p{
+	margin-top: 6px;
+	font-size: 1.4rem;
+}
+.banner .dai li p span:after{
+	content: ">";
+}
+.banner .dai li:last-child{
+	border-left:1px solid gray;
+	height: 100%;
+	padding-left: 10px;
+}
+.banner .dai li .number{
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	background: red;
+	color: #fff;
+	border-radius:50%;
+	left: 60%;
+	top: 0px;
+	text-align: center;
+} 
+.nav ul{
+	width: 100vw;
+}
+.nav ul li{
+	font-size: 1.6rem;
+	position: relative;
+	margin: 10px 0;
+	width: 100vw;
+	height: 45px;
+	background: #fff;
+}
+.nav ul li img{
+	width: 45px;
+	height: 45px;
+	transform: scale(0.8);
+	margin-left: 10px;
+}
+.nav ul li span:after{
+	content: ">";
+	position: absolute;
+	right: 5%;
+	line-height: 45px;
+	font-size: 1.6rem;
+}
+footer,li,ul{margin: 0;padding: 0;}
+section{
+	position: relative;
+	}
+.h-zhegai{
+	background: #000;
+	opacity: 0.4;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.zgnone{
+	display: none;
+}
+
+.del_center{
+	width: 70%;
+	border:1px solid #fff;
+	border-radius:10px;
+	background: #fff;
+	position: fixed;
+	color: black;
+	top: 35vh;
+	left: 15%;
+	z-index: 999999999;
+	opacity: 1;
+}
+.del_center .top1{
+	z-index: 999999999;
+	opacity: 1;
+	color: black;
+	width: 100%;
+	border-bottom: 1px solid gray;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	padding: 0 20px;
+}
+.del_center .top1 p{
+	color: #666;
+	line-height: 30px;
+	margin-bottom: 0;
+}
+.del_center .top1 p:first-child{
+	text-align: center;
+	line-height: 40px;
+}
+
+.del_center .top2 span{
+	display: block;
+	width: 49%;
+	height: 49px;
+	text-align: center;
+	line-height: 49px;
+	float: left;
+}
+.del_center .top2 span:first-child{
+	display: block;
+	border-right:1px solid gray ;
+}
+
+.header1 p i{
+	font-style: normal;
+	width: 15vw;
+	height: 7vw;
+	display: block;
+	position: absolute;
+	top: 4vw;
+	left: 9vw;
+}
+.header1 p i a{
+	color: green;
+	text-decoration: none;
+}
+.header1 p em{
+	font-style: normal;
+	margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

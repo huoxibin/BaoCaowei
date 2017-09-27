@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+				background: #F5F5F5;
+				color: #666;
+			}
+			header{
+				background: #fff;
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 50px;
+				text-align: center;
+				position: relative;
+				line-height: 50px;
+				margin-bottom: 5vw;
+				font-size: 5vw;
+			}
+			header i{
+				display: block;
+				width:20px;
+				height: 20px;
+				font-style: normal;
+				position: absolute;
+				left: 3vw;
+			}
+			.iconfont{
+				font-size: 18px;
+			}
+			header span{
+				position: absolute;
+				left: 3vw;
+				font-size: 3vw;
+			}
+			header em{
+				position: absolute;
+				right: 5vw;
+			}
+			#log{
+				background: rgb(255,98,120);
+				font-size: 5vw;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<i id="log1" class="iconfont icon-iconback"></i>
+			设置
+		</header>
+		<header>
+			<span>修改密码</span>
+			<em class="iconfont icon-icongo"></em>
+		</header>
+		<header>
+			<span>关于我们</span>
+			<em class="iconfont icon-icongo"></em>
+		</header>
+		<header id="log">
+			退出登录
+		</header>
+	</body>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/touch.js"></script>
+	<script>
+		touch.on("#log1","tap",function(){
+			window.location.href="wode.html"
+		})
+		
+		touch.on("#log","tap",function(){
+			localStorage.removeItem("login_success")
+			window.location.href="wode.html"
+		})
+		
+	</script>
+</html>

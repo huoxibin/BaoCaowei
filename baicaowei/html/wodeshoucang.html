@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"  />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/wodeshoucang.css"/>
+		<style type="text/css">
+			.iconfont{
+				font-size: 18px;
+			}
+			body{
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+				background: #F5F5F5;
+				color: #666;
+			}
+			header{
+				background: #fff;
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 50px;
+				text-align: center;
+				position: relative;
+				line-height: 50px;
+				margin-bottom: 5vw;
+				font-size: 4vw;
+			}
+			header i{
+				font-style: normal;
+				position: absolute;
+				left: 3vw;
+			}
+			#J_delBtn{
+				position: absolute;
+				left: 75vw;
+			}
+			#J_delBtn1{
+				position: absolute;
+				left: 85vw;
+			}
+			#cart-number{
+				text-align: center;
+				line-height: 20px;
+				font-style: normal;
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				left: 88vw;
+				top: 7px;
+				background: red;
+				border-radius:50%;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<i id="log3" class="iconfont icon-iconback"></i>
+			我的收藏
+			<i class="iconfont icon-icontrash" id="J_delBtn"></i>
+			<i class="iconfont icon-iconcartpressed" id="J_delBtn1"></i>
+			<em id="cart-number">0</em>
+		</header>
+		<div class="collect">
+			<ul>
+				<li class="hidden">
+					<div class="aImg">
+						<img src="../img/ppppp.jpg" />
+					</div>
+					<div class="textDiv">
+						<p id="f1">枣想核你在一起，一口双滋味</p>
+						<p id="f2">【枣夹核桃】百草味红枣夹核桃仁260g/袋</p>
+						<span id="f3">$24.9</span>
+					</div>
+					<div class="buy-btn1">
+						<i class="iconfont icon-iconcartpressed"></i>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="../js/zepto.js"></script>
+	<script src="../js/touch.js"></script>
+	<script type="text/javascript">
+		touch.on("#log3","tap",function(){
+			window.location.href="wode.html"
+		})
+//		$(function(){
+			var scData=localStorage.getItem("shoucang");
+			console.log(scData)
+//			[{"picurl":"http://img1.vipbcw.com/products/6948939602374/thumb/1.jpg?imageView2/2/w/630/",
+//			"title":"百草味精选草莓干100g/袋",
+//			"subtitle":"红颜草莓 甜蜜来相伴 果香浓郁","price":9.9,"id":"caomeigan"},
+//			{"picurl":"http://img1.vipbcw.com/products/6948939610430/thumb/1.jpg?imageView2/2/w/630/",
+//			"title":"【奶油味】百草味奶油味夏威夷果200g/袋","subtitle":"系出名门 颗颗挑选 美味甘醇融在口自然美味","price":16.9,
+//			"id":"weiyiguo"}]
+			if(scData){
+				var data=JSON.parse(scData);//将字符串转化为对象
+				console.log(data)
+//				[Object, Object]0: Object1: Objectlength: 2__proto__: Array[0]
+				shoucang(data);
+				console.log(data[0].title)
+				//百草味精选草莓干100g/袋
+			}
+			function shoucang(data){
+				for(var i=0;i<data.length;i++){
+					var ali=$(".collect ul .hidden").clone().removeClass("hidden");
+					ali.find("img").attr("src",data[i].picurl);
+					ali.find("#f1").html(data[i].subtitle);
+					ali.find("#f2").html(data[i].title);
+					ali.find("#f3").html("￥"+data[i].price)
+					ali.appendTo(".collect ul");
+					$("#cart-number").html(data.length)
+				}
+			}
+//		})
+	</script>
+</html>

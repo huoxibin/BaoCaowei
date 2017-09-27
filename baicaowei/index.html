@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/iconfont2.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body class="index-body">
+		<div class="container index-container paddingBottom">
+			<!--logo-->
+			<header class="clear">
+                <span class="logo fl"><img src="img/bcw_logo.png"></span>
+                <a href="html/Search.html" class="search fr"><img src="http://img2.vipbcw.com/wap/svg/icon_search_2.svg"></a>
+            </header>
+            <!--轮播-->
+			<div class="index-sea">
+				<div class="swiper-container swiper-container-horizontal">
+				    <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+				        <div class="swiper-slide" style="width: 414px; margin-right: 30px;"><img src="img/1469512425.jpg" /></div>
+				        <div class="swiper-slide" style="width: 414px; margin-right: 30px;"><img src="img/1469613499.jpg" /></div>
+				        <div class="swiper-slide" style="width: 414px; margin-right: 30px;"><img src="img/1469672663.jpg" /></div>
+				    </div>   
+			    <!-- Add Pagination -->
+			    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+			        <span class="swiper-pagination-bullet"></span>
+			        <span class="swiper-pagination-bullet"></span>
+			        <span class="swiper-pagination-bullet"></span>
+		        
+		    	</div>
+				</div>
+				<div class="bannerMask"><img src="http://img2.vipbcw.com/wap/banner_mask.png"> </div>
+			</div>
+			<!--导航标签-->
+			<div class="index-choose">
+                <ul class="clear">
+                    <li><a><img src="img/1469166246.png"><span>新人有礼</span></a></li>
+                    <li><a><img src="img/1469167471.png"><span>每日签到</span></a></li>
+                    <li><a><img src="img/1469167510.png"><span>HOT榜</span></a></li>
+                    <li><a><img src="img/1469167521.png"><span>免费试吃</span></a></li>
+                </ul>
+            </div>
+			<!--商品-->
+			<div class="index-content">
+                <h1>今日特卖</h1>
+                <p>每日10点上新</p>
+                
+               <!--json-->
+               
+    		</div>
+    		
+    		
+    		<!--尾页导航-->
+			<footer class="">
+			    
+			   <!-- 引用 common-footer-->
+			    
+			</footer>
+			<!--回到顶部-->
+			<div class="go-top" style="display: none;">
+		        <i class="iconfont icon-iconup"></i>
+		        <p>回到顶部</p>
+		    </div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper-3.3.1.min.js"></script>
+	<script src="js/touch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript"> 
+		$(function(){
+			 var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        centeredSlides: true,
+		        autoplay: 2000,
+		        loop : true,
+		        loopAdditionalSlides : 1,
+		        autoplayDisableOnInteraction: false
+		    });
+	        //回到顶部的按钮出现和消失
+	        var indexScrollTop = document.documentElement.scrollTop||document.body.scrollTop; //兼容IE
+	        $(window).scroll(function() {
+	            var indexScrollTop = $(this).scrollTop();
+	            //console.log(indexScrollTop);
+	            if (indexScrollTop >= 500) {
+	                $('.go-top').fadeIn();
+	            } else {
+	                $('.go-top').fadeOut();
+	            }
+	        });
+	        //点击回到顶部的按钮回到顶部
+	        $('.go-top').click(function(){
+	            $('html, body').animate({scrollTop: 0}, 'slow');
+	        });
+		})
+	   
+	</script>
+	
+	
+</html>

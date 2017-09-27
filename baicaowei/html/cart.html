@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../css/cart.css" />
+	</head>
+	<body>
+<!--购物车头部-->
+		<div class="header">
+			购物车
+			<span id="del-cart">删除</span>
+		</div>
+<!--购物车内容-->
+		<div class="cart-content">
+			<!--警告提示-->
+			<div class="cart-warn">
+				<a href="Sort.html">
+					<span>去凑单</span>再购
+					<em>68.00</em>元立享 实付满68元包邮
+					<i>&gt;</i>
+				</a>
+				<div>您已享受“实付满68元包邮”优惠</div>
+			</div>
+			<!--商品列表-->
+			<div class="cart-list">
+				
+		<!--空购物车-->
+				<div>
+					<img src="../img/cartLogin.png" alt=""/>
+					购物车空空，去
+					<a href="Sort.html">商城逛逛</a>
+				</div>
+			</div>
+		</div>
+<!--隐藏的提示框-->
+	<div class="warn-tip">警告信息</div>
+<!--隐藏的删除框-->
+		<div class="del-sure">
+			<div>
+				<span class="del-tit">确认删除所选商品？</span>
+				<span class="del-make">
+					<em>确认</em>
+					<em>取消</em>
+				</span>
+			</div>
+		</div>
+<!--购物车底部结算-->
+		<div class="cart-footer">
+			<div class="check-all">
+				<i></i>
+				<span>全选</span>
+			</div>
+			<div class="allmony">
+				<span>合计:</span>
+				<i>¥00.00</i>
+			</div>
+			<div class="topay">
+				<a href="javascript:;">去结算<span>(0)</span></a>
+			</div>
+		</div>
+<!--底部-->
+		<footer></footer>
+		<script type="text/javascript" src="../js/zepto.js" ></script>
+		<script type="text/javascript" src="../js/touch.js" ></script>
+		<script type="text/javascript" src="../js/cart.js" ></script>
+	</body>
+</html>

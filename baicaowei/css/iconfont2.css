@@ -1,0 +1,26 @@
+
+@font-face {font-family: "iconfont";
+  src: url('../iconfont/iconfont.eot'); /* IE9*/
+  src: url('../iconfont/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../iconfont/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-cart:before { content: "\e6af"; }
+.icon-cartfill:before { content: "\e6b9"; }
+.icon-home:before { content: "\e6b8"; }
+.icon-homefill:before { content: "\e6bb"; }
+.icon-my:before { content: "\e78b"; }
+.icon-myfill:before { content: "\e78c"; }
+.icon-circle:before { content: "\e7b1"; }
+.icon-circlefill:before { content: "\e7b0"; }
+.icon-fenlei:before { content: "\e663"; }

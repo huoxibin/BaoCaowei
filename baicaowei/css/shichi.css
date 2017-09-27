@@ -1,0 +1,66 @@
+/*common*/
+.fl { float: left}
+.fr { float: right}
+.clear { zoom: 1}
+.clear:before,.clear:after { content: ''; display: table;}
+.clear:after { clear: both}
+.none { display: none;}
+.allMiddle { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%,-50%); -moz-transform: translate(-50%,-50%); -o-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); transform: translate(-50%,-50%);}
+.leftMiddle { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -o-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%);}
+.topMiddle { position: absolute; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);}
+.iconfont { font-size: 2rem;}
+.yellow-font { color: #f5a623;}
+.little-black-font { color: #F05352;}
+body { background: #fff4e1;}
+.header { border-bottom: 1px solid #ddd;}
+b { font-weight: bold;}
+
+
+
+/*返回按钮*/
+.container .backBtn{
+	width: 35px;
+    height: 35px;
+    background: rgba(0,0,0,.5);
+    line-height: 35px;
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 998;
+    border-radius: 50%;
+}
+.container .backBtn i{
+	font-size: 20px;
+	color: #fff;
+}
+/*active*/
+.active-top-content { background: #ffe3b3; padding: 5% 10%;}
+.active-top-content h1,.active-middle-content h1 { position: relative; text-align: center; padding: 15px 0; font-size: 1.8rem; color: #382716; font-weight: bold;}
+.active-top-content h1 i,.active-middle-content h1 i { display: inline-block; width: 10px; height: 10px; background: #382716; transform: rotate(45deg);margin:0 15px;}
+.active-top-content p { line-height: 1.8; color: #382716; font-size: 1.4rem;}
+.active-top-content h2 { height: 50px; line-height: 35px; padding-top: 15px; color: #382716; font-size: 1.4rem; font-weight: bold;}
+.active-top-content h2 em { float: left; background: url("http://img2.vipbcw.com/wap/app/c_img2.png") no-repeat center; display: inline-block; width: 35px; height: 35px; background-size: 100%;}
+.icon-left { left: 30%;}
+.icon-right { left: 67%;}
+.active-top-content-time { display: inline-block; background: #fff; padding: 3px 10px;}
+.active-top-content .active-top-content-ts { padding-top: 15px; color: #ff6d0a;}
+.active-middle-content { padding: 5%;}
+.active-middle-content .icon-left { left: 23%;}
+.active-middle-content .icon-right { left: 73%;}
+.text1 { padding: 15px 0; color: #382716; font-size: 1.4rem; text-align: center;}
+.active-middle-content img { padding-top: 20px;}
+.active-middle-content h2 { padding: 10px 0; font-size: 1.6rem; color: #382716;}
+.text2 {color: #382716; font-size: 1.4rem;line-height: 2.2rem;}
+.active-middle ul { border-top: 1px solid #ddd;}
+.active-middle ul li { line-height: 40px; border-bottom: 1px solid #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd;}
+.active-middle .goods-text { display: inline-block; width: 40%; text-indent: 10px; font-size: 1.4rem; color: #958775; vertical-align: top;}
+.active-middle .n-text { display: inline-block; width: 55%; font-size: 1.4rem; color: #382716; word-break: break-all;}
+
+
+
+
+
+
+
+

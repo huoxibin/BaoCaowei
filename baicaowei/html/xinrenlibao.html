@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新人礼包</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/xrlb.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		
+		
+	</head>
+	<body>
+		<div class="content">
+			<!--返回按钮-->
+			<div class="backBtn" onclick="history.go(-1)">
+					<!--history.go(-1)后退一页，并且刷新页面
+						还有以下方法
+						history.back();   后退
+						history.forward(); 前进
+						***history.go(-1)和history.back()的区别***
+						history.go(-1)表示后退与刷新。如数据有改变也随之改变
+						history.back()只是单纯的返回到上一页。
+					-->
+					<i class="iconfont icon-iconback"></i>
+				</div>
+            <div class="title_img">
+                <img src="../img/g_top1.jpg" alt="">
+            </div>
+            <div class="getCoupon">
+                <a href="javascript:;"><img id="J_getCoup" src="../img/g_top3.jpg" alt=""></a>
+            </div>
+            <!--使用说明-->
+            <div class="instructions new_user_part">
+                <div class="part_title">
+                   	 使用说明
+                </div>
+                <div class="info_list">
+                    <ul>
+                        <li><span></span>1. 本礼包为108元新人专享礼，领取后请于"我的"-"优惠券"列表中查看</li>
+                        <li><span></span>2. 新人礼包包含6张组合优惠券，每次购物限用一张优惠券</li>
+                        <li><span></span>3. 在确认订单页面-优惠券列表进行优惠券使用选择</li>
+                    </ul>
+                </div>
+            </div>
+            <!--优惠券组合-->
+            <div class="discount new_user_part">
+                <div class="part_title">
+                    	优惠券组合
+                </div>
+                <div class="info_list">
+                    <ul class="clearfix">
+                        <li><img src="../img/g_coup1.png" alt=""></li>
+                        <li><img src="../img/g_coup2.png" alt=""></li>
+                        <li><img src="../img/g_coup3.png" alt=""></li>
+                        <li><img src="../img/g_coup4.png" alt=""></li>
+                        <li><img src="../img/g_coup5.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <!--icon列表-->
+            <div class="icon_list clearfix">
+                <ul class="clearfix">
+                    <li><div><img src="../img/g_li1.png" alt=""></div>68元包邮</li>
+                    <li class="ico_line"><div><img src="../img/g_li2.png" alt=""></div>30天退换</li>
+                    <li class="ico_line"><div><img src="../img/g_li3.png" alt=""></div>9仓齐发</li>
+                    <li class="ico_line"><div><img src="../img/g_li4.png" alt=""></div>品质保证</li>
+                </ul>
+            </div>
+            <!--弹出层-->
+                            <!--已领取-->
+                <div class="mark" id="mark1">
+                    <div class="mark_img"><a href="http://m.vipbcw.com/frontend/coupon/couponList"><img src="http://img2.vipbcw.com/wap/app/g_mark1.png" alt=""></a></div>
+                    <div class="mark_button"></div>
+                </div>
+                <!--领取成功-->
+                <div class="mark" id="mark2">
+                    <div class="mark_img"><a href="http://m.vipbcw.com/frontend/coupon/couponList"><img src="http://img2.vipbcw.com/wap/app/g_mark2.png" alt=""></a></div>
+                    <div class="mark_button"></div>
+                </div>
+           </div>
+	</body>
+	<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

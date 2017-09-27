@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"  />
+		<title></title>
+	
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../css/base.css"/>-->
+
+		<style type="text/css">
+		body{
+			background: #fff;
+		}
+		
+		 
+		</style>
+	</head>
+	<body>
+		<div class="z-backBtn" onclick="history.go(-1)">
+					<!--history.go(-1)后退一页，并且刷新页面
+						还有以下方法
+						history.back();   后退
+						history.forward(); 前进
+						***history.go(-1)和history.back()的区别***
+						history.go(-1)表示后退与刷新。如数据有改变也随之改变
+						history.back()只是单纯的返回到上一页。
+					-->
+					<i class="iconfont icon-iconback"></i>
+		</div>
+
+		<header id="dl-header">
+			<img src="../img/logo.jpg" alt="" />
+		</header>
+		<section id="dl-cont">
+			<div>
+				<img src="../img/ic_iphone.svg"/>
+				<input type="text" placeholder="手机号" id='dl-username' autofocus="autofocus"/>
+			</div>
+			<div>
+				<img src="../img/ic_locker.svg"/>
+				<input type="password" placeholder="密码" id="dl-password"/>
+			</div>
+			<div>
+				<!--<input type="button" value="登 录" id="dl-btn"/>-->
+				<button id="dl-btn">登 录</button>
+			</div>
+			<div class="ld-register">
+				<span id="qzc-tap"><a href="register.html">注册</a></span>
+				<span id="forgetpass"><a href="register.html">忘记密码</a></span>
+			</div>
+			<div class="qzc-remaind"><p></p></div>
+		</section>
+		
+		
+	</body>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script src="../layer/layer.js"></script>
+	<script src="../js/touch.js"></script>
+	<script type="text/javascript">
+		//获取localstory
+		var story_username=localStorage.getItem("username");
+		var story_password=localStorage.getItem("password1");
+		if(story_username){
+			$("#dl-username").val(story_username)
+		}
+		if(story_password){
+			$("#dl-password").val(story_password)
+		}
+/*		$("#dl-cont input").not("#dl-btn").focus(function(){
+			$(".qzc-remaind p").css('background',"none")
+
+		})*/
+		var re=/^[1][358][0-9]{9}$/
+		touch.on("#dl-btn","tap",function(){
+			var dl_username=$("#dl-username").val();
+			var dl_password=$("#dl-password").val();
+			$.ajax({
+                url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+                data:{
+                    status:"login",
+                    userID:dl_username,
+                    password:dl_password
+                },
+                success:function(date){//成功了返回数值
+                    var data=JSON.parse(date);//返回来的是字符串 把字符串转成json对象
+                   // console.log(data)
+                    if(data.code){
+                    /*	$(".qzc-remaind p").html("欢迎"+data.userID+" 登录！").css({
+							background: "#666",
+							color: "#fff",
+							padding: "15px 30px",
+							"font-family": "微软雅黑",
+							"font-size": "2vw",
+							"border-radius": "8px 8px",
+							opacity: 0.9,
+							"font-size":"1vh"
+						})*/
+						layer.msg("欢迎"+data.userID+" 登录！",{
+							offset: "80%"
+						})
+                    	localStorage.username=data.userID;
+                    	localStorage.password1=encodeURI(dl_password);//正常写的时候就得是后台拿过来的data.password
+                    	//在这里就存储一下自己写的东西 zhishi xianshi zai ziji de shebei shang
+                        localStorage.login_success=9;
+                        setTimeout(function(){
+                            window.location.href="../index.html"
+                        },500)
+                    }else if(data==0||(!re.test(dl_username))){
+               /*         $(".qzc-remaind p").html("您输入的用户名不存在！").css({
+							background: "#666",
+							color: "#fff",
+							padding: "15px 30px",
+							"font-family": "微软雅黑",
+							"font-size": "2vw",
+							"border-radius": "8px 8px",
+							opacity: 0.9,
+							"font-size":"1vh"
+							
+						})*/
+						layer.msg('您输入的用户名不存在！',{
+							offset: "80%"
+						})
+						
+
+                    }else if(data==2){
+/*                        $(".qzc-remaind p").html("您输入的密码有误！").css({
+							background: "#666",
+							color: "#fff",
+							padding: "15px 30px",
+							"font-family": "微软雅黑",
+							"font-size": "2vw",
+							"border-radius": "8px 8px",
+							opacity: 0.9,
+							"font-size":"1vh"
+						})*/
+						layer.msg('您输入的密码有误！',{
+							offset: "80%"
+						})
+                    }
+                },
+                error:function(data){
+                    console.log(data)
+                }
+            })
+
+        $("#users").val("")
+        $("#pass1").val("");
+        $("#pass2").val("");
+    })
+	//点击注册
+/*	touch.on("#qzc-tap","tap",function(){
+		window.location.href="register.html"
+	})
+	//点击忘记密码
+	touch.on("#forgetpass","tap",function(){
+		window.location.href="register.html"
+	})
+	*/
+		
+		
+	</script>
+</html>

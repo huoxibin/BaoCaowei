@@ -1,0 +1,170 @@
+a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+button,html input[type=button],input[type=submit]{-webkit-apperance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+ol,ul,li{list-style:none;}
+a{text-decoration: none;}
+img{border:0;vertical-align:middle}
+em,i,u{font-style:normal}
+.fl{float:left}
+.fr{float:right}
+.al{text-align:left}
+.ac{text-align:center}
+.clear { zoom: 1}
+.clear:before,.clear:after { content: ''; display: table;}
+.clear:after { clear: both}
+
+
+body {
+    margin: 0 auto;
+    /*min-width: 320px;*/
+    max-width: 100%;
+    font-family: "Microsoft YaHei",Arial,"Helvetica";
+    background: #F5F5F5;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/*.index-body{
+	width: 100vw;
+	height: 100%;
+	
+	box-sizing: border-box;
+	
+}*/
+/*----------------logo----------------*/
+header {
+	 position: fixed; 
+	 top: 0; left: 0; 
+	 width: 100%; 
+	 height: 50px; 
+	 line-height: 50px; 
+	 padding: 0 1rem; 
+	 background: #FAD948; 
+	 z-index: 90;
+}
+/*.index-body header{background: url("http://img2.vipbcw.com/wap/top_bg.png") repeat-x;position: absolute;}*/
+.index-body header{
+	background:none;
+	position: absolute;
+} 
+.logo{display: block;}
+.header { border-bottom: 1px solid #ccc;}
+header img { 
+	width: 100%; 
+	height: auto; 
+	max-width: 100%; 
+	border: 0 none;
+}
+header a{display: block;}
+.index-container {position: relative; }
+.logo { display: block; 
+width: 6rem; 
+height: auto;
+}
+.search { 
+	display: block;
+	width: 2.5rem;
+	height: auto;
+	position: absolute;
+	top: 0;right: 15px;
+}
+.sliderBox{
+	position:absolute;
+	top:0;left: 0;
+	width:100%;
+}
+/*----------------轮播-------------------*/
+.index-sea{
+        position: relative;
+        width: 100%;
+        height: 40vh;
+    }
+    
+.swiper-container {
+        width: 100%;
+        height: 100%;
+        
+    }
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.index-sea .swiper-slide img{
+	width: 100%;
+	height: 40vh;
+}
+img {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+.index-sea .bannerMask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+}
+/*-----------导航标签-------------------*/
+
+.index-container .index-choose { 
+	background: white; 
+	border-bottom: 1px solid #e8e8e8;
+}
+.index-choose ul { padding: 15px 0;}
+.index-choose ul li { float: left; width: 25%; text-align: center; height: 72px;}
+.index-choose img { width: 3rem; height: auto;}
+.index-choose span { display: block; margin-top: 5px; color: black;font-size:12px;}
+
+
+/*--------------------商品---------------------*/
+.index-content { background: #fff; padding: 15px 10px; margin-top: 10px;}
+.index-content>h1 { line-height: 26px; font-size: 1.8rem; color: #3c4347;}
+.index-content>p { line-height: 22px; padding-bottom: 3px; font-size: 1rem; color: #8a8f91;}
+.index-content ul {}
+.index-content ul li { padding: 10px 0; border-bottom: 1px solid #eee;}
+.index-content ul li p { padding-top: 5px;}
+.index-content .index-list-page-top { font-size: 1.3rem; color: #333;}
+.index-content .index-list-page-top em { float: right; font-size: 1.2rem; color: #FF4348;}
+.index-content .index-list-page-top em:before { content: '￥';}
+.index-content .index-list-page-bottom {color: #A1A4A6;font-size: 11px;}
+.index-content .index-list-page-bottom em { float: right; color: #666; padding-left: 15px; background: url(http://img2.vipbcw.com/wap/clock.png) no-repeat center left; background-size: 25%;}
+
+/*------------回到顶部------------------*/
+.go-top {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    height: 50px;
+    z-index: 9999;
+    text-align: center;
+    background: rgba(250,217,72,1);
+    padding-top: 3px;
+    display: none;
+}
+.go-top .iconfont { font-size: 2rem;}
+
+
+
+
+
+
+
+
+
+

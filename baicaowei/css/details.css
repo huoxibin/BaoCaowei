@@ -1,0 +1,463 @@
+/*a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+button,html input[type=button],input[type=submit]{-webkit-apperance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+ol,ul,li{list-style:none;}
+a{text-decoration: none;color: rgba(60,67,71,1);}
+img{border:0;vertical-align:middle}
+em,i,u{font-style:normal}
+.fl{float:left}
+.fr{float:right}
+.al{text-align:left}
+.ac{text-align:center}
+.clear { zoom: 1}
+.clear:before,.clear:after { content: ''; display: table;}
+.clear:after { clear: both}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}*/
+img {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+ body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 100%;
+    font-family: "Microsoft YaHei",Arial,"Helvetica";
+    background: #F5F5F5;
+    color: #666;
+    font-size: 12px;
+}
+
+section{
+    padding-bottom: 56px;
+}
+/******************************轮播区域********************************/
+.z-header{
+	position: relative;
+	overflow: hidden;
+}
+/*返回按钮*/
+.z-header .z-backBtn{
+	width: 35px;
+    height: 35px;
+    background: rgba(0,0,0,.5);
+    line-height: 35px;
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 998;
+    border-radius: 50%;
+}
+.z-header .z-backBtn i{
+	font-size: 20px;
+	color: #fff;
+}
+/*轮播图*/
+#z-goodsPic,#z-goodsPic ul li{
+	width: 100vw;
+}
+#z-goodsPic li img{
+	width: 100%;
+}
+.hidden{
+	display: none;
+}
+
+/*轮播图页码*/
+.swiper-pagination-fraction {
+	position: absolute;
+    left: 85%;
+    text-align: center;
+    padding: 0 8px;
+    width: 13vw;
+    height: 26px;
+    line-height: 26px;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border-radius: 13px;
+    font-size: 3.5vw;
+}
+
+/****************************价格****************************/
+.z-price,.z-title,.z-carry{
+	padding: 0 10px;
+	background: #fff;
+}
+.z-price{
+	position: relative;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+}
+.z-price .z-newPrice{
+	font-size: 24px;
+    color: #FF4348;
+}
+.z-price .z-newPrice:before{
+	content: "￥";
+}
+.z-price del{
+	margin-left: 6px;
+    font-size: 16px;
+    color: #aaa;
+}
+.z-price del:before{
+	content: "￥";
+}
+.z-time{
+	position: absolute;
+	right: 10px;
+	font-size: 14px;
+}
+
+/*************************商品标题***********************/
+.z-title{
+	padding: 10px;
+}
+.z-title h1{
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #3C4347;
+}
+.z-title p{
+	font-size: 14px;
+    color: #8a8f91;
+}
+.z-title span{
+    display: block;
+    margin-top: 30px;
+    color: #666;
+    font-size: 14px;
+}
+
+/*************************包邮***************************/
+.z-carry{
+   	margin-top: 10px;
+}
+.z-carry-t{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #f5f5f5;
+}
+.z-carry-t em{
+    display: inline-block;
+    height: 18px;
+    line-height: 16px;
+    padding: 0 8px;
+    margin-right: 10px;
+    background: #ff4348;
+    color: #fff;
+}
+.z-carry ul{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+.z-carry ul li{
+    float: left;
+    width: 30%;
+    position: relative;
+}
+.z-carry ul li em{
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #ffda44;
+    border-radius: 50%;
+}
+
+/***********************推荐内容************************/
+.z-content{
+	margin-top: 10px;
+}
+.z-content h1{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+    background: #fff;
+}
+.z-content h1 i{
+    float: left;
+    color: #ffda44;
+    margin: 0 10px;
+    font-size: 24px;
+}
+.z-content ul{
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    background: #fff;
+}
+.z-content ul li{
+    float: left;
+    width: 48%;
+    line-height: 20px;
+    padding: 10px 0;
+    margin: 5px 1%;
+    font-size: 1.4rem;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+.z-content li span{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.z-content li span img{
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.z-content ul li h4{
+    width: 95%;
+    line-height: 18px;
+    margin: 0 auto;
+    padding-top: 6px;
+    height: 42px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.z-content li p{
+	position: relative;
+    padding: 0 5px;
+    margin-top: 6px;
+    color: #FF4348;
+    font-size: 16px;
+}
+.z-content li p:before{
+	content: "￥";
+}
+
+/***********************详情and评论**********************/
+.z-tab{
+	margin-top: 10px;
+}
+.z-lin{
+	border-bottom: 2px solid #FFDA30;
+}
+.z-none{
+	display: none;
+}
+.z-tab ul{
+	overflow: hidden;
+	background: #fff;
+}
+.z-tab .z-tabList{
+	float: left;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.z-tab ul li em {
+    display: inline-block;
+    width: 60%;
+    height: 38px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+}
+/*图展*/
+.z-tabpp{
+	height: auto;
+	margin-top: 1px;
+}
+.z-tabpp .tabpp-ul li{
+	width: 100vw;
+	height: auto;
+	border: none;
+	margin-top: -1px;
+}
+/*评价*/
+.z-pj{
+	background: #fff;
+    padding: 0 10px;
+}
+.z-pj h2{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    border-bottom: 1px solid #f5f5f5;
+    color: #333;
+}
+.z-pj .pj-ul{
+    overflow: hidden;
+    background: #fff;
+}
+.z-pj .pj-ul li{
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+.z-pj .pj-ul h3,.z-pj .pj-ul p{
+	line-height: 20px;
+}
+.tab-name{
+    float: left;
+    font-size: 14px;
+}
+.tab-time{
+    float: right;
+    color: #9ea1a3;
+}
+.tab-page{
+	clear: both;
+    font-size: 14px;
+}
+
+/***************************底部导航****************************/
+.z-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    z-index: 98;
+    background: #fff;
+    border-top: 1px solid #f5f5f5;
+}
+.z-footer .z-count{
+	float: left;
+    width: 27%;
+    text-align: center;
+    margin-top: 6px;
+    position: relative;
+}
+.z-footer ul li p{
+	font-size: 14px;
+}
+
+.z-count i{
+	font-size: 24px;
+}
+.z-count .cart-number{
+	position: absolute;
+    left: 52%;
+    top: -5%;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff4348;
+    color: #fff;
+    line-height: 14px;
+}
+.z-addBtn{
+    float: left;
+    width: 40%;
+    margin-left: 5px;
+}
+.z-addBtn span{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    margin: 8px auto;
+    text-align: center;
+    font-size: 16px;
+    background: #FFDA44;
+    border-radius: 21px;
+    color: #111;
+}
+.icon-iconcollected{
+	color: #ff4348;
+}
+
+/*************************遮盖层*************************/
+.z-zhegai{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: 0.4;
+	width: 100vw;
+	height: 100vw;
+	z-index: 900;
+}
+.z-rolling{
+	overflow-y: hidden;
+}
+/********************服务窗口****************************/
+.z-fuwu{
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding-bottom: 15px;
+    z-index: 998;
+}
+/*关闭按钮*/
+.z-close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/details/z-close.png) no-repeat center;
+    background-size: 100%;
+}
+.z-fuwu h5{
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    color: #111;
+    text-align: center;
+}
+.z-fuwu ul{
+	padding: 0 10px;
+}
+.z-fuwu ul li{
+    padding: 10px 0 10px 30px;
+}
+.z-fuwu ul .list-1{
+	background: url(../img/details/fw_01.png) no-repeat left 8px;
+    background-size: 8%;
+}
+.z-fuwu ul .list-2{
+	background: url(../img/details/fw_02.png) no-repeat left 8px;
+    background-size: 8%;
+}
+.z-fuwu ul .list-3{
+	background: url(../img/details/fw_03.png) no-repeat left 8px;
+    background-size: 8%;
+}
+.z-fuwu ul .list-4{
+	background: url(../img/details/fw_04.png) no-repeat left 8px;
+    background-size: 8%;
+}
+.z-fuwu ul li h6{
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+    color: #333;
+}
+.z-fuwu ul li p{
+    color: #999;
+    font-size: 14px;
+}
+/*窗口升起*/
+.rising {
+    -webkit-transition: bottom ease-out 200ms;
+    -moz-transition: bottom ease-out 200ms;
+    -o-transition: bottom ease-out 200ms;
+    transition: bottom ease-out 200ms;
+    bottom: 0;
+}
+
+
+
+

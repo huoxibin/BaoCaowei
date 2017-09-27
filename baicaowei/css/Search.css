@@ -1,0 +1,44 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+ul li{
+	list-style: none;
+}
+header{
+	background: gold;
+	display: flex;
+	justify-content: space-around;
+}
+.back{
+	font-size: 26px;
+	line-height: 50px;
+}
+.btn{
+	background:gold;
+	border: none;
+}
+.search{
+	margin-top:10px;
+	width:60%;
+	height:30px;
+	border-radius: 30px;
+	border: none;
+	padding-left:50px;
+	background:#fef7da;
+}
+.hot{
+	font-size: 22px;
+	padding:8px 8px;
+}
+.goods li{
+	padding:5px 8px;
+	font-size: 12px;
+	background:#f4f4f4;
+	margin:5px 10px;
+	border-radius: 10px;
+	float: left;
+}
